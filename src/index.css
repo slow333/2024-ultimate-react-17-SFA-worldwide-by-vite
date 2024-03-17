@@ -59,7 +59,9 @@ button, .btn {
   padding: 1rem 3rem;
   border: none;
   border-radius: 8px;
+  cursor: pointer;
 }
+
 input:focus {
   outline: none;
   background-color: #fff;

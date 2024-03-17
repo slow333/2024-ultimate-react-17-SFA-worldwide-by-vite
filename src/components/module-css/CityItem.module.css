@@ -45,6 +45,7 @@
   font-size: 1.6rem;
   font-weight: 400;
   cursor: pointer;
+  padding: 0;
   transition: all 0.2s;
 }
 

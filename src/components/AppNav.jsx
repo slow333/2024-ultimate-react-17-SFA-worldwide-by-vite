@@ -1,13 +1,12 @@
 import styles from './module-css/AppNav.module.css'
-import SideBar from "./SideBar.jsx";
+import { NavLink} from "react-router-dom";
 
 const AppNav = () => {
   return (
     <nav className={styles.nav}>
       <ul>
-      <SideBar/>
-      <div>app nav</div>
-
+        <NavLink to='cities'>cities</NavLink>
+        <NavLink to='countries'>countries</NavLink>
       </ul>
     </nav>
   );
