@@ -43,9 +43,30 @@ const CitiesProvider = ({children}) => {
       }
    }
 
+   async function createCity(newCity) {
+      try {
+         setLoading(true)
+         const res = await fetch(`http://localhost:9090/cities`, {
+            method: "POST",
+            body: JSON.stringify(newCity),
+            headers: {
+               "Content-type": "application/json"
+            },
+         });
+         const data = await res.json();
+         setCities(cities => [...cities, data])
+      } catch (err) {
+         setError(err.message)
+      } finally {
+         setLoading(false)
+      }
+   }
+
   return (
     <CitiesContext.Provider
-      value={{ cities, loading, error, currentCity, getCity  }}>
+      value={{
+         cities, loading, error, currentCity, getCity, createCity
+    }}>
        {children}
     </CitiesContext.Provider>
   );
@@ -53,7 +74,7 @@ const CitiesProvider = ({children}) => {
 
 function useCities() {
    const context = useContext(CitiesContext);
-   if(context === undefined) throw new Error("콘텍스트 밖에서 정의 했어요...")
+   if(context === undefined) throw new Error("콘텍스트 밖에서 정의 했어요..⛔⛔⛔.")
    return context;
 }
 

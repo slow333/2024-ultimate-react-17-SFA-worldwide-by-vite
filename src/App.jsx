@@ -1,4 +1,4 @@
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {BrowserRouter, Navigate, Route, Routes} from "react-router-dom";
 
 import Homepage from "./pages/Homepage.jsx";
 import AppLayout from "./pages/AppLayout.jsx";
@@ -21,7 +21,7 @@ export default function App() {
         <Routes>
           <Route index element={<Homepage/>}/>
           <Route path='/app' element={<AppLayout/>}>
-            <Route index element={<CityList/>}/>
+            <Route index element={<Navigate replace to='cities'/> } />
             <Route path='cities' element={<CityList/>}/>
             <Route path='cities/:id' element={<City/>}/>
             <Route path='countries' element={<CountryList/>}/>

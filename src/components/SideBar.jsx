@@ -9,8 +9,8 @@ const SideBar = () => {
       <Logo/>
       <AppNav/>
       <Outlet/>
-      <div className={styles.footer}>footer</div>
-      <div className={styles.copyright}>copyright</div>
+      <div className={styles.footer}>vite, react, useContext, react-router-dom@6</div>
+      <div className={styles.copyright}> world tour &copy;www.logcenter.info</div>
     </div>
   );
 }

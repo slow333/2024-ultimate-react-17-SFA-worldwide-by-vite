@@ -1,5 +1,5 @@
 import styles from "./module-css/City.module.css";
-import {Link, useNavigate, useParams} from "react-router-dom";
+import { useParams} from "react-router-dom";
 import {useCities} from "../contexts/CitiesContext.jsx";
 import Spinner from "./Spinner.jsx";
 import Message from "./Message.jsx";
@@ -7,7 +7,7 @@ import {useEffect} from "react";
 import BackButton from "./BackButton.jsx";
 
 const formatDate = (date) =>
-  new Intl.DateTimeFormat("en", {
+  new Intl.DateTimeFormat("ko", {
     day: "numeric",
     month: "long",
     year: "numeric",
@@ -15,10 +15,9 @@ const formatDate = (date) =>
   }).format(new Date(date));
 
 function City() {
-  const {id} = useParams()
-  const navigate = useNavigate();
+  const { id } = useParams()
 
-  const {getCity, currentCity, loading, error} = useCities();
+  const { getCity, currentCity, loading, error } = useCities();
 
   useEffect(() => {
     getCity(id)
@@ -53,7 +52,7 @@ function City() {
       <div className={styles.row}>
         <h6>Learn more</h6>
         <a
-          href={`https://en.wikipedia.org/wiki/${cityName}`}
+          href={`https://ko.wikipedia.org/wiki/${cityName}`}
           target="_blank"
           rel="noreferrer"
         >

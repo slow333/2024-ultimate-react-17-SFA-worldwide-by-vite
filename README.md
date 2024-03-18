@@ -38,3 +38,7 @@ export default defineConfig({
 
 # react router 적용
 >> npm i react-router-dom@6 // 나중에 최신 버젼으로...
+ 
+>  npm i react-leaflet leaflet
+
+> react map 관련 가장 많이 사용하는 library 
