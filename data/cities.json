@@ -25,75 +25,99 @@
       "id": "17806751"
     },
     {
-      "cityName": "Berlin",
-      "country": "Germany",
-      "emoji": "🇩🇪",
-      "date": "2027-02-12T09:24:11.863Z",
-      "notes": "Amazing 😃",
-      "position": {
-        "lat": 52.53586782505711,
-        "lng": 13.376933665713324
-      },
-      "id": "98443197"
-    },
-    {
-      "id": "0772",
-      "cityName": "Berlin",
-      "country": "Germany",
-      "emoji": "🇩🇪",
-      "date": "2024-03-18T07:43:51.474Z",
+      "id": "2d67",
+      "cityName": "Xuzhou",
+      "country": "China",
+      "emoji": "🇨🇳",
+      "date": "2024-03-19T02:11:07.607Z",
       "notes": "",
       "position": {
-        "lat": "52.536377455921",
-        "lng": "13.401775360107424"
+        "lat": "34.32529192442733",
+        "lng": "117.77343750000001"
       }
     },
     {
-      "id": "cec9",
-      "cityName": "Berlin",
-      "country": "Germany",
-      "emoji": "🇩🇪",
-      "date": "2024-03-18T07:45:27.560Z",
+      "id": "6894",
+      "cityName": "Orly",
+      "country": "France",
+      "emoji": "🇫🇷",
+      "date": "2024-03-19T04:05:12.369Z",
       "notes": "",
       "position": {
-        "lat": "52.536377455921",
-        "lng": "13.401775360107424"
+        "lat": "48.748945343432936",
+        "lng": "2.4169921875000004"
       }
     },
     {
-      "id": "e21a",
+      "id": "472b",
+      "cityName": "Biga",
+      "country": "Turkiye",
+      "emoji": "🇹🇷",
+      "date": "2024-03-19T04:05:42.940Z",
+      "notes": "",
+      "position": {
+        "lat": "40.16208338164619",
+        "lng": "27.24609375"
+      }
+    },
+    {
+      "id": "7c87",
+      "cityName": "Frosolone",
+      "country": "Italy",
+      "emoji": "🇮🇹",
+      "date": "2024-03-19T04:12:54.942Z",
+      "notes": "",
+      "position": {
+        "lat": "41.60722821271717",
+        "lng": "14.458007812500002"
+      }
+    },
+    {
+      "id": "7fd4",
+      "cityName": "Gyeongsangnam-do",
+      "country": "Korea (the Republic of)",
+      "emoji": "🇰🇷",
+      "date": "2024-03-19T04:17:14.711Z",
+      "notes": "korea",
+      "position": {
+        "lat": "35.33529320309331",
+        "lng": "127.96875000000001"
+      }
+    },
+    {
+      "id": "49e8",
+      "cityName": "Wartkowice",
+      "country": "Poland",
+      "emoji": "🇵🇱",
+      "date": "2024-03-19T04:24:52.663Z",
+      "notes": "",
+      "position": {
+        "lat": "51.97134580885172",
+        "lng": "18.918457031250004"
+      }
+    },
+    {
+      "id": "80ad",
+      "cityName": "Madona",
+      "country": "Latvia",
+      "emoji": "🇱🇻",
+      "date": "2024-03-19T04:25:01.431Z",
+      "notes": "",
+      "position": {
+        "lat": "56.9449741808516",
+        "lng": "25.664062500000004"
+      }
+    },
+    {
+      "id": "101b",
       "cityName": "Daejeon",
       "country": "Korea (the Republic of)",
       "emoji": "🇰🇷",
-      "date": "2024-03-18T07:46:15.919Z",
-      "notes": "대전",
-      "position": {
-        "lat": "36.44296603391527",
-        "lng": "127.40089416503908"
-      }
-    },
-    {
-      "id": "ba7f",
-      "cityName": "Daejeon",
-      "country": "Korea (the Republic of)",
-      "emoji": "🇰🇷",
-      "date": "2024-03-18T07:46:49.761Z",
+      "date": "2024-03-19T04:26:13.833Z",
       "notes": "",
       "position": {
-        "lat": "36.450077484547144",
-        "lng": "127.40707397460939"
-      }
-    },
-    {
-      "id": "90ed",
-      "cityName": "Gyeonggi-do",
-      "country": "Korea (the Republic of)",
-      "emoji": "🇰🇷",
-      "date": "2024-03-18T07:50:03.573Z",
-      "notes": "진서",
-      "position": {
-        "lat": "37.49229399862877",
-        "lng": "126.85913085937501"
+        "lat": "36.35052700542766",
+        "lng": "127.39196777343751"
       }
     }
   ]

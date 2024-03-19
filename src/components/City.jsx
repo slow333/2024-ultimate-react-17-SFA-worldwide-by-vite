@@ -52,7 +52,7 @@ function City() {
       <div className={styles.row}>
         <h6>Learn more</h6>
         <a
-          href={`https://ko.wikipedia.org/wiki/${cityName}`}
+          href={`https://en.wikipedia.org/wiki/${cityName}`}
           target="_blank"
           rel="noreferrer"
         >

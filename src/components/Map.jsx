@@ -53,7 +53,7 @@ const Map = () => {
                   </Popup>
                 </Marker>
            )}
-           <ChangeCenter position={mapPosition} zoom={13}/>
+           <ChangeCenter position={mapPosition} zoom={6}/>
            <DetectClick/>
          </MapContainer>
        </div>

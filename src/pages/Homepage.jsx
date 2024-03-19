@@ -17,7 +17,7 @@ export default function Homepage() {
           of. Never forget your wonderful experiences, and show your friends how
           you have wandered the world.
         </h2>
-        <Link to='/app' className='btn p-3'>여행을 떠나요.</Link>
+        <Link to='/login' className='btn p-3'>여행을 떠나요.</Link>
       </section>
     </main>
   );

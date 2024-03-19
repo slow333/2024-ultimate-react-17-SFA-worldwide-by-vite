@@ -17,10 +17,10 @@ export function convertToEmoji(countryCode) {
   const codePoints = countryCode
     .toUpperCase()
     .split("")
-    .map((char) => 127397 + char.charCodeAt());
+    .map((char) => 127397 + char.charCodeAt(0));
   return String.fromCodePoint(...codePoints);
 }
-
+// String.fromCodePoint(emoji)
 function Form() {
 
   const [cityName, setCityName] = useState("");
@@ -33,7 +33,8 @@ function Form() {
   const [isLoadingGeocoding, setIsLoadingGeocoding] = useState(false);
   const [emoji, setEmoji] =useState('');
   const [geocodingError, setGeocodingError] = useState('');
-  const { createCity } = useCities();
+  const { createCity, isLoading } = useCities();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if(!lat && !lng) return ;
@@ -58,14 +59,15 @@ function Form() {
     }
     fetchCityData();
   }, [lat, lng]);
-  function handleSubmit(e) {
+
+  async function handleSubmit(e) {
     e.preventDefault();
-    console.log(e.target);
     if(!cityName || !date) return;
     const newCity = {
       cityName, country, emoji, date, notes, position: {lat, lng}
     };
-    createCity(newCity)
+    await createCity(newCity);
+    navigate('/app/cities');
   }
 
   if(isLoadingGeocoding) return <Spinner/>
@@ -75,13 +77,13 @@ function Form() {
   if(geocodingError) return <Message message={geocodingError}/>
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit}>
+    <form className={`${styles.form} ${isLoading ? "styles.loading": ""}`} onSubmit={handleSubmit}>
       <div className={styles.row}>
         <label htmlFor="cityName">City name</label>
         <input
           id="cityName"
           onChange={(e) => setCityName(e.target.value)}
-          value={cityName}
+          value={`${cityName} , ${country}`}
         />
          <span className={styles.flag}>{emoji}</span>
       </div>
