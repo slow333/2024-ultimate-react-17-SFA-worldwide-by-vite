@@ -1,7 +1,7 @@
 // noinspection JSCheckFunctionSignatures
+// noinspection JSCheckFunctionSignatures
 
-import {createContext, useContext, useEffect, useReducer} from "react";
-import Message from "../components/Message.jsx";
+import {createContext, useCallback, useContext, useEffect, useReducer} from "react";
 
 const CitiesContext = createContext();
 
@@ -42,7 +42,11 @@ function reducer(state, action) {
         error: action.payload,
       }
     case "city/current":
-      return {...state, currentCity: action.payload, isLoading: false}
+      return {
+        ...state,
+        isLoading: false,
+        currentCity: action.payload,
+      }
     default:
       throw new Error("no type found")
   }
@@ -50,12 +54,13 @@ function reducer(state, action) {
 
 const CitiesProvider = ({children}) => {
 
-  const [state, dispatch] = useReducer(reducer, initialState)
-  const {cities, isLoading, error, currentCity} = state;
+  const [{cities, isLoading, error, currentCity}, dispatch] =
+       useReducer(reducer, initialState)
 
   useEffect(() => {
+    dispatch({type: "loading"});
+
     async function getData() {
-      dispatch({type: "loading"});
       try {
         const res = await fetch('http://localhost:9090/cities');
         const data = await res.json();
@@ -65,22 +70,22 @@ const CitiesProvider = ({children}) => {
         dispatch({type: "rejected", payload: "데이터 로딩 실패..."});
       }
     }
+
     getData();
   }, []);
 
-  async function getCity(id) {
-    if(id === currentCity.id+'') return;
+  const getCity = useCallback(async function getCity(id) {
+    if (id === currentCity.id + '') return;
     dispatch({type: "loading"});
     try {
       const res = await fetch(`http://localhost:9090/cities/${id}`);
-      if (!res.ok) throw new Error('데이터 수신 실패.')
       const data = await res.json();
       dispatch({type: "city/current", payload: data});
       dispatch({type: "rejected", payload: ''});
     } catch (err) {
       dispatch({type: "rejected", payload: "현재 도시 데이터 수신 실패"});
     }
-  }
+  },[currentCity.id])
 
   async function createCity(newCity) {
     dispatch({type: "loading"});
@@ -93,7 +98,6 @@ const CitiesProvider = ({children}) => {
         },
       });
       const data = await res.json();
-
       dispatch({type: "city/create", payload: data});
     } catch (err) {
       dispatch({type: "rejected", payload: '데이터 추가에 문제 발생'});
@@ -101,8 +105,8 @@ const CitiesProvider = ({children}) => {
   }
 
   async function deleteCity(id) {
+    dispatch({type: "loading"});
     try {
-      dispatch({type: "loading"});
       const res = await fetch(`http://localhost:9090/cities/${id}`, {
         method: "DELETE",
       });

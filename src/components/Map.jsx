@@ -1,3 +1,5 @@
+// noinspection JSCheckFunctionSignatures
+
 import styles from "./module-css/Map.module.css"
 import {useNavigate, useSearchParams} from "react-router-dom";
 import {MapContainer, Marker, Popup, TileLayer, useMap, useMapEvents} from "react-leaflet";
@@ -16,9 +18,8 @@ const Map = () => {
   } = useGeoLocation()
   // 36.4307847 , 127.3972961
 
-  const [mapPosition, setMapPosition] = useState([36.4307847, 127.3972961]);
+  const [mapPosition, setMapPosition] = useState([36.4307847, -25.3972961]);
   const [mapLat, mapLng] = useUrlPosition();
-
 
   useEffect(() => {
     if (mapLng && mapLat) setMapPosition([mapLat, mapLng])
